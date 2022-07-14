@@ -157,7 +157,10 @@
   </script>
 
   <div id="app" @vue:mounted="setup">
-    <div class="folhas-dec"></div>
+    <div class="folhas-dec">
+      <div class="folhas folha-e"></div>
+      <div class="folhas folha-d"></div>
+    </div>
 
     <section class="conteudo-wrap">
       <div class="logo-wrap">
@@ -179,8 +182,8 @@
         </div>
       </div>
 
-      <div class="waves-container"></div>
     </section>
+    <div class="waves-container"></div>
 
   </div>
 
@@ -467,10 +470,12 @@
       max-width: 100%;
       width: 100vw;
       min-height: 100vh;
+      height: 100%;
       margin: 0;
       padding: 0;
       position: relative;
       z-index: 5;
+      overflow: hidden;
     }
 
     #app::before {
@@ -492,25 +497,51 @@
     .conteudo-wrap {
       max-width: 100%;
       width: 100vw;
-      min-height: 100vh;
+      min-height: calc(100vh - 15vh);
       display: flex;
       flex-direction: column;
       overflow-x: hidden;
       align-items: center;
+      justify-content: space-around;
 
     }
 
     .folhas-dec {
-      background-image: url('./img/leafs.png');
+      background-image: url('./img/folhas-bg.png');
       background-position: top center;
       background-size: cover;
+      background-repeat: repeat-y;
       max-width: 100%;
       width: 100vw;
       height: 100%;
       position: absolute;
       top: 0;
       left: 0;
+    }
+
+    .folhas {
+      background-size: contain;
+      background-repeat: no-repeat;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
       z-index: 10;
+
+    }
+
+    .folha-e {
+      left: 0;
+      background-position: top right;
+      z-index: 13;
+      background-image: url('./img/leafs-l.png');
+    }
+
+    .folha-d {
+      right: 0;
+      background-position: top left;
+      z-index: 11;
+      background-image: url('./img/leafs-r.png');
     }
 
     .waves-container {
@@ -523,11 +554,9 @@
       height: var(--h-waves);
       max-height: 380px;
       /* position: absolute; */
-      margin-top: 42px;
-      margin-bottom: -12px;
       left: 0;
       animation: float 4s ease-in-out infinite;
-      z-index: 9;
+      z-index: 12;
     }
 
     picture,
@@ -540,7 +569,7 @@
       width: 80vw;
       max-width: 800px;
       min-width: 200px;
-      margin-top: 80px;
+      margin-top: 40px;
       aspect-ratio: 794/821;
     }
 
