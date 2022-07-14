@@ -10,16 +10,6 @@
 /* ==========================================================================
    Base styles: opinionated defaults Orgovan
    ========================================================================== */
-@font-face {
-  font-family: "Orgovan";
-  src: local("Orgovan Brush"), local("Orgovan-Brush"),
-    url("./Orgovan-Brush.woff2") format("woff2"),
-    url("./Orgovan-Brush.woff") format("woff"),
-    url("Orgovan-Brush.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
 
 html {
   color: #222;

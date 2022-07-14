@@ -35,9 +35,18 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 
   <link rel="manifest" href="site.webmanifest">
-  <link rel="stylesheet" href="css/main.css">
-  <script src="https://unpkg.com/petite-vue" defer></script>
-  <script src="js/modernizr-custom.js" defer></script>
+  <script src="https://unpkg.com/petite-vue" defer init></script>
+  <script src="js/modernizr-custom.js"></script>
+  <script>
+    Modernizr.on("webp", function (result) {
+      const body = document.getElementById("body");
+      if (!result) {
+        body.classList.remove("webp");
+      } else {
+        body.classList.add("webp");
+      }
+    });
+  </script>
   <!-- Meta Pixel Code -->
   <script>
     !function (f, b, e, v, n, t, s) {
@@ -60,7 +69,7 @@
 
 </head>
 
-<body id="body">
+<body id="body" class="webp">
   <script type="module">
     import { createApp } from 'https://unpkg.com/petite-vue?module'
 
@@ -80,7 +89,7 @@
         Modernizr.on("webp", function (result) {
           const body = document.getElementById("body");
           if (!result) {
-            body.classList.add("no-webp");
+            body.classList.remove("webp");
             this.temWebp = false;
           } else {
             body.classList.add("webp");
@@ -202,6 +211,7 @@
     <div class="waves-container"></div>
 
   </div>
+  <link rel="stylesheet" href="css/main.css" defer init>
 
   <style>
     div {
