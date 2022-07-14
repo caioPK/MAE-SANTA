@@ -1,0 +1,11 @@
+{
+  "name": "functions",
+  "version": "1.0.0",
+  "description": "",
+  "main": "test.js",
+  "scripts": {},
+  "author": "",
+  "dependencies": {
+    "axios": "^0.26.1"
+  }
+}

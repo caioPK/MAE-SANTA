@@ -1,0 +1,9 @@
+[build]
+publish = "dist"
+functions = "netlify/functions"
+
+[context.production]
+ environment = { ACCESS_TOKEN = "super secret", NODE_VERSION = "14.15.3" }
+
+[[plugins]]
+package = "@netlify/plugin-functions-install-core"
