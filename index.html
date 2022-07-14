@@ -127,28 +127,28 @@
 
           vue.obrigado = true
           vue.enviando = false;
-          // vue.setTimeout()
-          // fetch("/.netlify/functions/tests", {
-          //   method: "POST",
-          //   body: JSON.stringify(body),
-          // })
-          //   .then((res) => {
-          //     // console.log('deu bom', res)
-          //     if (res.status !== 200) {
-          //       vue.erroNoEnvio = true;
-          //       vue.enviando = false;
-          //       return
-          //     } else {
-          //       vue.obrigado = true
-          //       vue.enviando = false;
-          //       vue.setTimeout()
-          //     }
-          //   })
-          //   .catch((e) => {
-          //     vue.erroNoEnvio = true;
-          //     vue.enviando = true;
-          //     console.log('deu ruim', e)
-          //   });
+          vue.setTimeout()
+          fetch("/.netlify/functions/test", {
+            method: "POST",
+            body: JSON.stringify(body),
+          })
+            .then((res) => {
+              // console.log('deu bom', res)
+              if (res.status !== 200) {
+                vue.erroNoEnvio = true;
+                vue.enviando = false;
+                return
+              } else {
+                vue.obrigado = true
+                vue.enviando = false;
+                vue.setTimeout()
+              }
+            })
+            .catch((e) => {
+              vue.erroNoEnvio = true;
+              vue.enviando = true;
+              console.log('deu ruim', e)
+            });
         }
       },
       phoneValidate(phone) {

@@ -3,7 +3,7 @@ const axios = require('axios');
 exports.handler = async (event, context, callback) => {
     try {
         console.log('-------------');
-        const response = await axios.post('https://mnh51cvt0m.execute-api.sa-east-1.amazonaws.com/prod/odontofarma',
+        const response = await axios.post('https://mnh51cvt0m.execute-api.sa-east-1.amazonaws.com/prod/mae-santa',
             event.body
         );
         console.log(event.body);
