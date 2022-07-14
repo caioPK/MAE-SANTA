@@ -165,20 +165,33 @@
     <section class="conteudo-wrap">
       <div class="logo-wrap">
         <picture class="logo-container">
-          <source srcset="./img/logo.png?as=webp&width=800" type="image/webp" />
-          <source srcset="./img/logo.png?width=800" type="image/png" />
-          <img src="./img/logo.png?width=250" alt="Logo Mãe santa também bebe 2022" />
-          <!-- <img src="./img/logo.png" alt="Logo Mãe santa também bebe 2022"> -->
+          <source sizes="(max-width: 700px) 100vw, 700px" srcset="
+              ./img/logo_qjtlyb_c_scalew_190.webp 190w,
+              ./img/logo_qjtlyb_c_scalew_639.webp 639w,
+              ./img/logo_qjtlyb_c_scalew_700.webp 700w"" type=" image/webp" />
+          <source sizes="(max-width: 794px) 100vw, 794px"
+            srcset="./img/logo_mfk2sa_c_scale,w_190.png 190w, ./img/logo_mfk2sa_c_scale,w_190.png 794w"
+            type="image/png" />
+          <img src="./img/logo_mfk2sa_c_scale,w_190.png" alt="Logo Mãe santa também bebe 2022" />
+
         </picture>
       </div>
       <div class="realizacao-wrap">
         <picture class="realizacao-container">
+          <source src="./img/reps-logos.webp" type=" image/webp"
+            alt="Rep. Santo Grau, Rep. Casa da mãe Joana, Rep. Vem cá bebe">
+          <source src="./img/reps-logos.png" type=" image/png"
+            alt="Rep. Santo Grau, Rep. Casa da mãe Joana, Rep. Vem cá bebe">
           <img src="./img/reps-logos.png" alt="Rep. Santo Grau, Rep. Casa da mãe Joana, Rep. Vem cá bebe">
         </picture>
       </div>
       <div class="text-wrap">
         <div class="text-container">
           <picture>
+            <source src="./img/texto.webp" type=" image/webp"
+              alt="Rep. Santo Grau, Rep. Casa da mãe Joana, Rep. Vem cá bebe">
+            <source src="./img/texto.png" type=" image/png"
+              alt="Rep. Santo Grau, Rep. Casa da mãe Joana, Rep. Vem cá bebe">
             <img src="./img/texto.png" alt="22 de Outubro, Ilha Solteira - SP. A mamãe está de volta! - OPEN BAR">
           </picture>
 
@@ -462,9 +475,13 @@
       --h-waves: 20vh;
     }
 
-    /* body.webp #app {
-      background-image: url('./img/bg.webp');
-    } */
+    body.webp #app {
+      background-image: url('./img/bg-rosa.webp');
+    }
+
+    body.webp #app::before {
+      background-image: url('./img/bg-amarelo.webp');
+    }
 
     #app {
       background-image: url('./img/bg-rosa.png');
@@ -522,6 +539,10 @@
       left: 0;
     }
 
+    body.webp .folhas-dec {
+      background-image: url('./img/folhas-bg.webp');
+    }
+
     .folhas {
       background-size: contain;
       background-repeat: no-repeat;
@@ -540,11 +561,19 @@
       background-image: url('./img/leafs-l.png');
     }
 
+    body.webp .folha-e {
+      background-image: url('./img/leafs-l.webp');
+    }
+
     .folha-d {
       right: 0;
       background-position: top left;
       z-index: 11;
       background-image: url('./img/leafs-r.png');
+    }
+
+    body.webp .folha-d {
+      background-image: url('./img/leafs-r.webp');
     }
 
     .waves-container {
@@ -560,6 +589,10 @@
       left: 0;
       animation: float 4s ease-in-out infinite;
       z-index: 12;
+    }
+
+    body.webp .waves-container {
+      background-image: url('./img/waves.webp');
     }
 
     picture,
