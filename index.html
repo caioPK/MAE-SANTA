@@ -35,7 +35,7 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 
   <link rel="manifest" href="site.webmanifest">
-  <script src="https://unpkg.com/petite-vue" defer init></script>
+  <script src="https://unpkg.com/petite-vue" defer></script>
   <script src="js/modernizr-custom.js"></script>
   <script>
     Modernizr.on("webp", function (result) {
@@ -210,7 +210,7 @@
       </div>
 
       <div class="btn-wrap">
-        <button class="cta">TOQUE AQUI E <br> ENTRE PARA O <br> GRUPO VIP </button>
+        <button class="cta" @click="clickBtnGrupo()">TOQUE AQUI E <br> ENTRE PARA O <br> GRUPO VIP </button>
       </div>
 
     </section>
@@ -218,7 +218,34 @@
       <div class="folhas folha-e"></div>
       <div class="folhas folha-d"></div>
     </div>
-    <div class="waves-container"></div>
+    <div :class="`${(mostrarForm)? 'subiu':'baixo'}`">
+      <div :class="`waves-container  `">
+
+      </div>
+      <div class="form-wrap">
+        <form action="" class="form-grupo scale-up-ver-top" style="display: none"
+          :style="`display: ${(mostrarForm)? 'flex':'none'}`">
+
+          <input name=" nome" v-model="nome" type="text" class="input-form" placeholder="Nome">
+          <small class="shake-horizontal" v-if="errNome">Nome deve conter pelo menos 3 letras</small>
+
+          <input name="contato" class="input-form" v-model="telefone" placeholder="(XX)XXXXX-XXXX" type="text" numeric
+            step="0.1" inputmode="numeric" digitOnly maxlength="13" formControlName="resultInput" />
+          <small v-if="errCel" class="shake-horizontal">Digite um numero de celular válido.</small>
+          <!-- (erroNoEnvio)?'erro':'' -->
+          <div class="btn-wrap form-btn" :class="[(enviando)?'enviando':'', (erroNoEnvio)?'erro':'']">
+            <button @click.prevent="enviar" id="btn-form"><span style="white-space: pre-line;">ENVIAR</span></button>
+          </div>
+          <small v-if="erroNoEnvio">Ocorreu um erro ao enviar o formulário. <br> Por favor clique para tentar
+            novamente</small>
+
+          <div class="obg-wrap scale-in-ver-bottom" v-if="obrigado">
+            <h2>Obrigado!</h2>
+            <p>Você será redirecionado em {{tempo}}</p>
+          </div>
+        </form>
+      </div>
+    </div>
 
   </div>
   <style>
@@ -428,8 +455,21 @@
       max-height: 380px;
       /* position: absolute; */
       left: 0;
+      padding: 64px 0;
+      transition: all 0.8s;
+      transform: translateY(0);
       animation: float 4s ease-in-out infinite;
       z-index: 12;
+    }
+
+    .baixo {}
+
+    .baixo.subiu {}
+
+    .subiu {
+      transition: all 0.8s;
+      transform: translateY(-364px);
+      /* animation: float-alto 4s ease-in-out infinite; */
     }
 
     body.webp .waves-container {
@@ -556,6 +596,21 @@
       user-select: text;
     }
 
+    .form-wrap {
+      /* margin-top: 56px; */
+      /* margin-bottom: -32px; */
+      min-height: 15vh;
+      background-color: #005be4;
+      padding-top: 32px;
+      padding-bottom: 32px;
+      transition: all 0.5s;
+    }
+
+    .subiu .form-wrap {
+      transition: all 0.3s;
+      margin-bottom: -365px;
+
+    }
 
     .form-grupo {
       display: flex;
@@ -570,8 +625,10 @@
 
     small {
       font-family: Arial, Helvetica, sans-serif;
-      color: red;
+      color: white;
       text-align: center;
+      font-weight: bold;
+      font-size: 1em;
     }
 
     .shake-horizontal {
