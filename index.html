@@ -166,10 +166,6 @@
   </script>
 
   <div id="app" @vue:mounted="setup">
-    <div class="folhas-dec">
-      <div class="folhas folha-e"></div>
-      <div class="folhas folha-d"></div>
-    </div>
 
     <section class="conteudo-wrap">
       <div class="logo-wrap">
@@ -203,11 +199,25 @@
               alt="Rep. Santo Grau, Rep. Casa da mãe Joana, Rep. Vem cá bebe">
             <img src="./img/texto.png" alt="22 de Outubro, Ilha Solteira - SP. A mamãe está de volta! - OPEN BAR">
           </picture>
-
         </div>
       </div>
 
+      <div class="vantagens-wrap flex-column">
+        <h2 class="titulo">Faça parte do <wbr>grupo VIP e...</h2>
+        <h3 class="vantagem vantagem-l">Garanta o <br> lote promo</h3>
+        <h3 class="vantagem vantagem-r">Conconrra a <br> sorteios</h3>
+        <h3 class="vantagem">Tenha informações <br>em primeira mão</h3>
+      </div>
+
+      <div class="btn-wrap">
+        <button class="cta">TOQUE AQUI E <br> ENTRE PARA O <br> GRUPO VIP </button>
+      </div>
+
     </section>
+    <div class="folhas-dec">
+      <div class="folhas folha-e"></div>
+      <div class="folhas folha-d"></div>
+    </div>
     <div class="waves-container"></div>
 
   </div>
@@ -249,11 +259,41 @@
     }
 
     .titulo {
-      color: white;
-      font-size: 2.2em;
+      color: #fb1f52;
+      font-size: 2.1em;
       font-weight: 100;
       width: 90%;
       text-align: center;
+      margin-bottom: -8px;
+
+    }
+
+    .vantagens-wrap {
+      width: 100%;
+      padding: 12px;
+    }
+
+    .vantagem {
+      color: #22a22c;
+      text-shadow: 0px 4px 8px #fb1f5270;
+      font-size: 1.8em;
+      font-weight: 100;
+      width: 65%;
+      text-align: center;
+      max-width: 250px;
+      min-width: 70px;
+      margin: 8px;
+      line-height: 1em;
+    }
+
+    .vantagem-l {
+      margin-right: 30%;
+      transform: rotate(-2deg);
+    }
+
+    .vantagem-r {
+      margin-left: 30%;
+      transform: rotate(2deg);
     }
 
     html,
@@ -320,7 +360,7 @@
       min-height: calc(100vh - 15vh);
       display: flex;
       flex-direction: column;
-      overflow-x: hidden;
+      /* overflow-x: hidden; */
       align-items: center;
       justify-content: space-around;
 
@@ -337,6 +377,7 @@
       position: absolute;
       top: 0;
       left: 0;
+      z-index: -1;
     }
 
     body.webp .folhas-dec {
@@ -347,7 +388,7 @@
       background-size: contain;
       background-repeat: no-repeat;
       width: 100%;
-      height: 100%;
+      height: 100vh;
       position: absolute;
       top: 0;
       z-index: 10;
@@ -402,9 +443,9 @@
     }
 
     .logo-wrap {
-      width: 80vw;
-      max-width: 800px;
-      min-width: 200px;
+      width: 65vw;
+      max-width: 500px;
+      min-width: 160px;
       margin-top: 40px;
       aspect-ratio: 794/821;
     }
@@ -420,9 +461,9 @@
 
 
     .text-wrap {
-      width: 70vw;
-      max-width: 400px;
-      min-width: 250px;
+      width: 55vw;
+      max-width: 300px;
+      min-width: 160px;
       margin-top: -42px;
     }
 
@@ -434,30 +475,41 @@
     }
 
     .btn-wrap {
-      width: 70%;
+      width: 30vw;
       max-width: 600px;
       min-width: 200px;
-      transform: rotate(-5deg);
+      /* transform: rotate(-5deg); */
+      margin: 24px 0 32px 0;
+    }
+
+    body.webp .btn-wrap button {
+      background-image: url('./img/bg-rosa.webp');
     }
 
     .btn-wrap button {
-      padding: 12px;
+      padding: 12px 8px;
       width: 100%;
-      font-size: 18px;
+      font-size: 22px;
+      line-height: 22px;
       font-style: bold;
       color: #ffffff;
-      background: #f5b70c;
+      background-image: url('./img/bg-rosa.png');
+      background-position: top;
+      background-size: cover;
+      background-color: #fb1f52;
       border: 0px solid #ffffff;
-      text-shadow: 0px 4px 8px #222222;
-      /* box-shadow: 0px 0px 2px #000000;
-        -moz-box-shadow: 0px 0px 2px #000000;
-        -webkit-box-shadow: 0px 0px 2px #000000; */
+      /* text-shadow: 0px 4px 8px #222222; */
       border-radius: 0px 0px 0px 0px;
       -moz-border-radius: 0px 0px 0px 0px;
       -webkit-border-radius: 0px 0px 0px 0px;
-      padding: 13px 38px;
       cursor: pointer;
+      box-shadow: 0px 0px 0px #00000000;
+      transition: all 0.5s;
       margin: 0 auto;
+    }
+
+    .btn-wrap:hover button {
+      box-shadow: 0px 0px 16px #0000008c;
     }
 
     button {
@@ -491,7 +543,7 @@
 
   <style>
     div {
-      box-sizing: content-box;
+      box-sizing: border-box;
     }
 
     input[type="text"],
