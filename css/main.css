@@ -1,22 +1,3 @@
-@font-face {
-  font-family: "Earth Days";
-  src: local("Earth Days"), local("EarthDays"),
-    url("./EarthDays.woff2") format("woff2"),
-    url("./EarthDays.woff") format("woff"),
-    url("./EarthDays.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-html {
-  color: #222;
-  font-size: 1em;
-  line-height: 1.4;
-  font-family: "Earth Days", Impact, Haettenschweiler, "Arial Narrow Bold",
-    sans-serif;
-}
-
 /*
  * Remove text-shadow in selection highlight:
  * https://twitter.com/miketaylr/status/12228805301

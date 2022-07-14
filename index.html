@@ -35,7 +35,7 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 
   <link rel="manifest" href="site.webmanifest">
-  <script src="https://unpkg.com/petite-vue" defer></script>
+  <script src="https://unpkg.com/petite-vue@0.2.2/dist/petite-vue.es.js" defer></script>
   <script src="js/modernizr-custom.js"></script>
   <script>
     Modernizr.on("webp", function (result) {
@@ -48,11 +48,32 @@
     });
   </script>
 
+  <style>
+    @font-face {
+      font-family: "Earth Days";
+      src: local("Earth Days"), local("EarthDays"),
+        url("./EarthDays.woff2") format("woff2"),
+        url("./EarthDays.woff") format("woff"),
+        url("./EarthDays.ttf") format("truetype");
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    html {
+      color: #222;
+      font-size: 1em;
+      line-height: 1.4;
+      font-family: "Earth Days", Impact, Haettenschweiler, "Arial Narrow Bold",
+        sans-serif;
+    }
+  </style>
+
 </head>
 
 <body id="body" class="webp">
   <script type="module">
-    import { createApp } from 'https://unpkg.com/petite-vue?module'
+    import { createApp } from 'https://unpkg.com/petite-vue@0.2.2/dist/petite-vue.es.js'
 
     createApp({
       temWebp: true,
@@ -318,6 +339,7 @@
       margin: 8px;
       line-height: 1em;
       transition: all .5s;
+      min-height: 60px;
 
     }
 
