@@ -47,25 +47,6 @@
       }
     });
   </script>
-  <!-- Meta Pixel Code -->
-  <script>
-    !function (f, b, e, v, n, t, s) {
-      if (f.fbq) return; n = f.fbq = function () {
-        n.callMethod ?
-          n.callMethod.apply(n, arguments) : n.queue.push(arguments)
-      };
-      if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
-      n.queue = []; t = b.createElement(e); t.async = !0;
-      t.src = v; s = b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t, s)
-    }(window, document, 'script',
-      'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '576410783866683');
-    fbq('track', 'PageView');
-  </script>
-  <noscript><img height="1" width="1" style="display:none"
-      src="https://www.facebook.com/tr?id=576410783866683&ev=PageView&noscript=1" /></noscript>
-  <!-- End Meta Pixel Code -->
 
 </head>
 
@@ -168,13 +149,13 @@
       setTimeout() {
         const vue = this;
         var x = setInterval(function () {
+          vue.tempo = vue.tempo - 1;
           if (vue.tempo <= 0) {
             clearInterval(x);
             this.esconderForm = true;
             this.mostrarForm = false
             window.location.replace('https://odontofarmacervejada.deepads.com.br');
           }
-          vue.tempo = vue.tempo - 1;
         }, 1000);
       },
     }).mount('#app')
@@ -185,15 +166,17 @@
     <section class="conteudo-wrap">
       <div class="logo-wrap">
         <picture class="logo-container">
-          <source sizes="(max-width: 700px) 100vw, 700px" srcset="
-              ./img/logo_qjtlyb_c_scalew_190.webp 190w,
-              ./img/logo_qjtlyb_c_scalew_639.webp 639w,
-              ./img/logo_qjtlyb_c_scalew_700.webp 700w"" type=" image/webp" />
-          <source sizes="(max-width: 794px) 100vw, 794px"
-            srcset="./img/logo_mfk2sa_c_scalew_190.png 190w, ./img/logo_mfk2sa_c_scalew_190.png 794w"
-            type="image/png" />
-          <img src="./img/logo_mfk2sa_c_scalew_190.png" alt="Logo Mãe santa também bebe 2022" />
-
+          <source sizes="(max-width: 500px) 100vw, 500px" srcset="
+                  ./img/logo/logo_nmvkha_c_scalew_160.webp 160w,
+                  ./img/logo/logo_nmvkha_c_scalew_478.webp 478w,
+                  ./img/logo/logo_nmvkha_c_scalew_500.webp 500w" type="image/webp" />
+          <source sizes="(max-width: 500px) 100vw, 500px" srcset="
+              ./img/logo/logo_kad082_c_scalew_160.png 160w,
+              ./img/logo/logo_kad082_c_scalew_270.png 270w,
+              ./img/logo/logo_kad082_c_scalew_357.png 357w,
+              ./img/logo/logo_kad082_c_scalew_432.png 432w,
+              ./img/logo/logo_kad082_c_scalew_500.png 500w" type="image/png">
+          <img src="./img/logo/logo_kad082_c_scalew_270.png" alt="Logo Mãe santa também bebe 2022" />
         </picture>
       </div>
       <div class="realizacao-wrap">
@@ -208,11 +191,17 @@
       <div class="text-wrap">
         <div class="text-container">
           <picture>
-            <source srcset="./img/texto.webp" type=" image/webp"
+            <source sizes="(max-width: 300px) 100vw, 300px" srcset="
+                    ./img/texto/texto_v3c5xj_c_scalew_160.webp 160w,
+                    ./img/texto/texto_v3c5xj_c_scalew_234.webp 234w,
+                    ./img/texto/texto_v3c5xj_c_scalew_300.webp 300w" type=" image/webp"
               alt="Rep. Santo Grau, Rep. Casa da mãe Joana, Rep. Vem cá bebe">
-            <source srcset="./img/texto.png" type=" image/png"
+            <source sizes="(max-width: 300px) 100vw, 300px" srcset="
+                ./img/texto/texto_i9iw7p_c_scalew_160.png 160w,
+                ./img/texto/texto_i9iw7p_c_scalew_300.png 300w" type=" image/png"
               alt="Rep. Santo Grau, Rep. Casa da mãe Joana, Rep. Vem cá bebe">
-            <img src="./img/texto.png" alt="22 de Outubro, Ilha Solteira - SP. A mamãe está de volta! - OPEN BAR">
+            <img src="./img/texto/texto_i9iw7p_c_scalew_300.png"
+              alt="22 de Outubro, Ilha Solteira - SP. A mamãe está de volta! - OPEN BAR">
           </picture>
         </div>
       </div>
@@ -264,6 +253,7 @@
     </div>
 
   </div>
+
   <style>
     /*IE9*/
     *::selection {
@@ -594,6 +584,33 @@
       max-width: 100%;
     }
   </style>
+
+  <!-- Meta Pixel Code -->
+  <script nonce="4yZwhMbBbX">
+    setTimeout(function () {
+      !function (f, b, e, v, n, t, s) {
+        if (f.fbq) return; n = f.fbq = function () {
+          n.callMethod ?
+            n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+        };
+        if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+        n.queue = []; t = b.createElement(e); t.async = !0;
+        t.src = v; s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s)
+      }(window, document, 'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '576410783866683');
+      fbq('track', 'PageView');
+    }, 3000)
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=576410783866683&ev=PageView&noscript=1" /></noscript>
+  <style nonce="4yZwhMbBbX">
+    .pixel {
+      display: none
+    }
+  </style>
+  <!-- End Meta Pixel Code -->
 
   <style>
     @media only screen and (min-width: 600px) {
