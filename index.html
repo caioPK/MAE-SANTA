@@ -156,8 +156,36 @@
   </script>
 
   <div id="app" @vue:mounted="setup">
-    <iframe src="https://sindustrial.sharepoint.com/sites/testando-gps/_layouts/15/workbench.aspx#/home"
-      title="W3Schools Free Online Web Tutorials" style="width: 100vw; height: 100vh"></iframe>
+    <!-- <div class="placa-titulo-wrap flex-row">
+      <picture class="placa-titulo-container">
+        <source type="image/webp" sizes="(max-width: 388px) 100vw, 388px" srcset="
+                    ./img/placa-data_w_190.webp 190w,
+                    ./img/placa-data_w_388.webp 388w" style="width: 100%;" />
+        <source type="image/png" sizes="(max-width: 388px) 100vw, 388px" srcset="
+                    ./img/placa-data_w_190.png 190w,
+                    ./img/placa-data_w_388.png 388w" style="width: 100%;" />
+        <img src="./img/placa-data.png" alt="21/05 as 22 horas. Parque de exposições Umuarama - PR">
+      </picture>
+    </div> -->
+    <div class="folhas-dec"></div>
+
+    <div class="logo-wrap">
+      <picture class="logo-container">
+        <img src="./img/logo.png" alt="Logo Mãe santa também bebe 2022">
+      </picture>
+    </div>
+    <div class="realizacao-wrap">
+      <picture class="realizacao-container">
+        <img src="./img/reps-logos.png" alt="Rep. Santo Grau, Rep. Casa da mãe Joana, Rep. Vem cá bebe">
+      </picture>
+    </div>
+    <div class="text-wrap">
+      <picture class="text-container">
+        <img src="./img/text.png" alt="22 de Outubro, Ilha Solteira - SP. A mamãe está de volta! - OPEN BAR">
+      </picture>
+    </div>
+
+    <div class="waves-container"></div>
 
   </div>
 
@@ -432,9 +460,17 @@
       background-color: #fbfbfb;
     }
 
+    /* body.webp #app {
+      background-image: url('./img/bg.webp');
+    } */
+
     #app {
+      background-image: url('./img/bg.png');
+      background-position: top center;
+      background-size: cover;
       max-width: 100%;
-      width: 100%;
+      width: 100vw;
+      height: 100vh;
       margin: 0;
       padding: 0;
       display: flex;
@@ -443,67 +479,46 @@
       align-items: center;
     }
 
+    .folhas-dec {
+      background-image: url('./img/leafs.png');
+      background-position: top center;
+      background-size: cover;
+      max-width: 100%;
+      width: 100vw;
+      height: 100vh;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 10;
+    }
+
+    .waves-container {
+      background-image: url('./img/waves.png');
+      background-position: top center;
+      background-size: cover;
+      max-width: 100%;
+      width: 100vw;
+      height: 20vh;
+      max-height: 380px;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      z-index: 9;
+    }
+
     picture,
     img {
       width: 100%;
       height: 100%;
     }
 
-    .papel-rasgado::after {
-      content: "";
-      background-image: url(./img/papel.webp);
-      background-position: center;
-      background-size: contain;
-      max-width: 100%;
-      width: 100%;
-      position: absolute;
-      height: 81px;
-      left: 0;
-      z-index: 2;
-      background-repeat: repeat-x;
-    }
-
-    .papel--rodape::after {
-      background-image: url(./img/papel-rodape.webp);
-    }
-
-    .papel-rasgado::after.no-webp {
-      background-image: url(./img/papel.png);
-    }
-
-    .papel-rodape::after.no-webp {
-      background-image: url(./img/papel.png);
-    }
-
-    .papel--bottom::after {
-      bottom: -4px;
-    }
-
-    .papel--top::after {
-      top: -4px;
-      transform: rotate(180deg);
-    }
-
-    .papel-rasgado.papel--top {
-      padding-top: 100px;
-    }
-
-    .papel-rasgado.papel--bottom {
-      padding-bottom: 100px;
-    }
-
     .section {
-      background-image: url('./img/bg.webp');
       background-position: top center;
       background-size: cover;
       max-width: 100vw;
       width: 100vw;
       overflow: hidden;
       position: relative;
-    }
-
-    .section.no-webp {
-      background-image: url('./img/bg.jpg');
     }
 
     .placa-titulo-wrap {
