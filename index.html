@@ -122,30 +122,34 @@
           tel: `${this.telefone}`,
         };
         const vue = this;
-        // if (!erro) {
-        this.enviando = true;
-        //   fetch("/.netlify/functions/test", {
-        //     method: "POST",
-        //     body: JSON.stringify(body),
-        //   })
-        //     .then((res) => {
-        //       // console.log('deu bom', res)
-        //       if (res.status !== 200) {
-        //         vue.erroNoEnvio = true;
-        //         vue.enviando = false;
-        //         return
-        //       } else {
-        //         vue.obrigado = true
-        //         vue.enviando = false;
-        //         vue.setTimeout()
-        //       }
-        //     })
-        //     .catch((e) => {
-        //       vue.erroNoEnvio = true;
-        //       vue.enviando = true;
-        //       console.log('deu ruim', e)
-        //     });
-        // }
+        if (erro) {
+          this.enviando = true;
+
+          vue.obrigado = true
+          vue.enviando = false;
+          // vue.setTimeout()
+          // fetch("/.netlify/functions/tests", {
+          //   method: "POST",
+          //   body: JSON.stringify(body),
+          // })
+          //   .then((res) => {
+          //     // console.log('deu bom', res)
+          //     if (res.status !== 200) {
+          //       vue.erroNoEnvio = true;
+          //       vue.enviando = false;
+          //       return
+          //     } else {
+          //       vue.obrigado = true
+          //       vue.enviando = false;
+          //       vue.setTimeout()
+          //     }
+          //   })
+          //   .catch((e) => {
+          //     vue.erroNoEnvio = true;
+          //     vue.enviando = true;
+          //     console.log('deu ruim', e)
+          //   });
+        }
       },
       phoneValidate(phone) {
         const regex = /^(?:(?:\+|00)?(55)\s?)?(?:\(?([1-9][0-9])\)?\s?)?(?:((?:9\d|[2-9])\d{3})\-?(\d{4}))$/;
@@ -604,6 +608,8 @@
       padding-top: 32px;
       padding-bottom: 32px;
       transition: all 0.5s;
+      display: flex;
+      justify-content: center;
     }
 
     .subiu .form-wrap {
@@ -753,11 +759,11 @@
       color: #fff;
       position: absolute;
       content: '!';
-      font-size: 1.8rem;
+      font-size: 3rem;
       font-weight: bold;
       text-align: center;
-      left: 50%;
-      top: 50%;
+      left: 52%;
+      top: 42%;
       -webkit-transform: translate(-50%, -50%) scale(0);
       transform: translate(-50%, -50%) scale(0);
       -webkit-animation: error ease-in 0.5s forwards;
@@ -772,7 +778,7 @@
       position: absolute;
       bottom: 0%;
       left: 0;
-      width: 100%;
+      width: calc(100% + 4px);
       height: 100%;
       z-index: 10;
       display: flex;
