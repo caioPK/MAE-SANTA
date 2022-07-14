@@ -170,6 +170,8 @@
         var x = setInterval(function () {
           if (vue.tempo <= 0) {
             clearInterval(x);
+            this.esconderForm = true;
+            this.mostrarForm = false
             window.location.replace('https://odontofarmacervejada.deepads.com.br');
           }
           vue.tempo = vue.tempo - 1;
@@ -325,6 +327,8 @@
       min-width: 70px;
       margin: 8px;
       line-height: 1em;
+      transition: all .5s;
+
     }
 
     .vantagem-l {
@@ -588,6 +592,25 @@
     .section {
       padding: 12px 24px;
       max-width: 100%;
+    }
+  </style>
+
+  <style>
+    @media only screen and (min-width: 600px) {
+      .vantagem-l {
+        margin-right: 15%;
+      }
+
+      .vantagem-r {
+        margin-left: 15%;
+      }
+
+      .vantagem {
+        width: 65%;
+        max-width: 400px;
+        font-size: 2.8em;
+        transition: all .5s;
+      }
     }
   </style>
 
