@@ -157,17 +157,6 @@
   </script>
 
   <div id="app" @vue:mounted="setup">
-    <!-- <div class="placa-titulo-wrap flex-row">
-      <picture class="placa-titulo-container">
-        <source type="image/webp" sizes="(max-width: 388px) 100vw, 388px" srcset="
-                    ./img/placa-data_w_190.webp 190w,
-                    ./img/placa-data_w_388.webp 388w" style="width: 100%;" />
-        <source type="image/png" sizes="(max-width: 388px) 100vw, 388px" srcset="
-                    ./img/placa-data_w_190.png 190w,
-                    ./img/placa-data_w_388.png 388w" style="width: 100%;" />
-        <img src="./img/placa-data.png" alt="21/05 as 22 horas. Parque de exposições Umuarama - PR">
-      </picture>
-    </div> -->
     <div class="folhas-dec"></div>
 
     <section class="conteudo-wrap">
@@ -472,7 +461,7 @@
     } */
 
     #app {
-      background-image: url('./img/bg.png');
+      background-image: url('./img/bg-rosa.png');
       background-position: top center;
       background-size: cover;
       max-width: 100%;
@@ -481,6 +470,23 @@
       margin: 0;
       padding: 0;
       position: relative;
+      z-index: 5;
+    }
+
+    #app::before {
+      content: "";
+      background-image: url('./img/bg-amarelo.png');
+      background-position: top center;
+      background-size: cover;
+      max-width: 100%;
+      width: calc(100% - 36px);
+      height: calc(100% - 36px);
+      margin: 0;
+      padding: 0;
+      position: absolute;
+      margin: 18px;
+      z-index: -1;
+
     }
 
     .conteudo-wrap {
